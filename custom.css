@@ -1,0 +1,113 @@
+/* p {
+    font-style: italic;
+    background-color: blue;
+    text-align: center;
+} */
+
+
+/* h1 {
+    color: blueviolet;
+    letter-spacing:20px;
+} */
+
+
+/* span {
+    background-color: blueviolet;
+    color: brown;
+} */
+
+ * {
+    color: blueviolet;
+} 
+
+/* a[title="two"] {
+    
+    color: black;
+   font-size: 20px;
+   letter-spacing:30px;
+}
+
+.hello {
+    color: #f7ff04;
+    font-size:40px;
+}
+
+#theone {
+    font-size:20px;
+    line-height:20px;
+    text-transform: uppercase;
+    text-indent:30px;
+}
+
+#thetwo {
+    color:#1f2010;
+}
+
+p a{
+    color: black;
+}
+p span{
+    color: blanchedalmond;
+    background-color: aquamarine;
+} */
+
+/* p>a {
+    color: black;
+    background-color: azure;
+} */
+
+p a{
+      color: black;
+    background-color: azure;
+}
+
+/* div p{
+    color: #ddf104;
+} */
+
+div>p{
+    color: black;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+* {
+    font-family: 'Times New Roman', Times, serif;
+}
+
+/* Link, Active, Hover, Visited, Layout, Border. */
+
+a:link {
+    color: black;
+    text-align: center;
+}
+
+a:hover{
+    color: rgb(0, 0, 255);
+    letter-spacing:20px;
+    font-size:30px;
+    border:10px dotted blue;
+}
+
+a:active{
+    background-color: antiquewhite;
+
+}
+/* a [title="two"]:visited{
+    color: beige;
+} */
+ /* a:visited{
+    color: antiquewhite;
+ } */
+
+:target{
+    color: black;
+    letter-spacing:20px;
+    font-style: italic;
+}
+
+a[title="thetwo"]{
+    color: rgb(19, 164, 116);
+}
+
+input[type=text]:focus{ 
+    width:250px; }

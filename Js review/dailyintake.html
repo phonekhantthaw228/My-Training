@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daily Intake</title>
+</head>
+
+<body>
+    <h1> Expense for What you eat and drink</h1>
+    <form action="" name="theForm">
+        <label for="">What you eat or drink Today</label> <br>
+        <input type="text" id="name" name="food">
+        <br><br>
+        <label for="">How much it costs</label><br>
+        <input type="number" id="price" name="cost"><br><br>
+        <label for="">Quantity</label><br>
+        <input type="number" id="quantity" name="quantity"><br><br>
+
+        <button type="button" onclick="addData()">Make a balance Sheet</button>
+
+    </form>
+    <br><br><br><br>
+    <h3>Your Daily Intake Data Sheet</h3>
+    <br><br>
+    <table cellspacing="0" cellpadding="20" border="1">
+        <thead>
+            <tr>
+                <th>No.</th>
+                <th>Name</th>
+                <th>Prrice</th>
+                <th>Qty</th>
+                <th>Total</th>
+            </tr>
+
+        </thead>
+        <tbody id="dataforTable">
+
+        </tbody>
+        <tfoot>
+            <tr>
+                <th colspan="4">Grand Total</th>
+                <th id="total"></th>
+            </tr>
+        </tfoot>
+    </table>
+
+    <script>
+        let dailyintake = [];
+        function addData() {
+            let food = document.theForm.food.value;
+            let cost = document.theForm.cost.value;
+            let quantity = document.theForm.quantity.value;
+
+            // console.log(food);
+            // console.log(cost);
+
+            // console.log(quantity);
+
+
+            // creating Object
+
+            let dailyData = {
+                foodintake: food,
+                howmuch: cost,
+                howmany: quantity,
+            }
+
+            // console.log(dailyData);
+
+            dailyintake.push(dailyData);
+    report();
+        }
+    
+
+        function report() {
+          
+  let data = '';
+  let total = 0;
+            for (let i = 0; i < dailyintake.length ; i++ ) {
+            
+                data+= `
+                        <tr>
+                            <td> ${i + 1}</td>    
+                            <td>${dailyintake[i].foodintake}</td>   
+                            <td>${dailyintake[i].howmuch}</td>   
+                            <td>${dailyintake[i].howmany}</td>
+                            <td> ${dailyintake[i].howmuch*dailyintake[i].howmany}</td>
+                         
+                        </tr>
+                `
+                total +=dailyintake[i].howmuch*dailyintake[i].howmany;
+            }
+
+            document.getElementById('dataforTable').innerHTML= data;
+            document.getElementById('total').innerText = total;
+        }
+
+
+
+
+    </script>
+</body>
+
+</html>
