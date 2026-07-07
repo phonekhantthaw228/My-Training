@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery-4.0.0.min.js"></script>
+</head>
+<body>
+    <h1>Hey There to Click The button Below to see what's for you</h1>
+    <p style="display: none;"><b>I love you So much Baby</b></p>
+    <button id="fadeout">Check it out</button>
+
+    <script>
+        $(document).ready(function(){
+            $('#fadeout').click(function(){
+                $('p').fadeIn(3000);
+            })
+        })
+    </script>
+</body>
+</html>

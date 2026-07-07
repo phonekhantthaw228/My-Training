@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery-4.0.0.min.js"></script>
+</head>
+<body>
+    <h1>Generate anything you want!!!!</h1>
+    <br><br>
+    <label for="name">What is your Topic?</label>
+    <br>
+    <input type="text" name="title" id="title">
+    <button id="generate">Generate</button>
+
+    <h2 style="text-align: center ;" id="heading"></h2>
+    <br>
+    <p id="paragraph" style="text-indent:50px;"></p>
+
+    <script>
+        $(document).ready(function(){
+            $('#generate').click(function(){
+                let get_topic = $('#title').val();
+                // console.log(get_topic);
+                $('#heading').text(get_topic);
+                $('#paragraph').text('Love is a beautifully complex interplay of biology, philosophy, and psychology that shapes the human experience. Scientifically, it begins as a chemical rush in the brain, driven by dopamine and norepinephrine that spark the exhilarating, obsessive phase of attraction, before settling into a stable, long-term bond anchored by oxytocin, the hormone responsible for deep trust and attachment. To capture the full spectrum of this emotion, the ancient Greeks famously categorized love into distinct forms, ranging from *Eros* (passionate romance) and *Philia* (deep friendship) to *Pragma* (enduring commitment) and *Agape* (selfless, universal love). Ultimately, modern psychology maps these diverse experiences using Robert Sternberg’s Triangular Theory, which suggests that the most complete form of love—Consummate Love—is achieved only when intimacy, passion, and commitment are seamlessly woven together.');
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery-4.0.0.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+
+   
+</head>
+<body>
+    <h1>Smart Study</h1>
+    <p class="topic">Master your Topics one card at a time.</p>
+    <!-- flash card -->
+     <p id="flashcard">How can you define love by <br>
+    according to Angus' Philosophy?
+            <br>
+        <button id="reveal">Reveal Answer</button></p>
+        <p id="answer">Love is a complex set of emotions and behaviors characterized by intimacy, passion, and commitment. It encompasses deep affection, protectiveness, and trust. From evolutionary drives to psychological bonds, it motivates us to prioritize the well-being and happiness of others</p>
+
+        <div class="button">
+            <button id="hint">Need a hint?????</button>
+        </div>
+        <p id="hint_hint">Love is a mix of strong feelings and actions. It is trust, care, and a choice to put someone else first. It is more than a feeling; it is a promise to support someone through good and bad times</p>
+
+</body>
+<script>
+    $(document).ready(function(){
+        $('#reveal').click(function(){
+            $('#answer').slideToggle('300');
+        })
+        $('#hint').click(function(){
+            $('#hint_hint').fadeToggle('300');
+        })
+    })
+</script>
+</html>
