@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery-4.0.0.min.js"></script>
+</head>
+<body>
+    <div id="bookList"> 
+        <h2>What have you read today?</h2>
+        Book's Name : <input type="text" name="name" id="name">
+        <br><br>
+        Author's Name : <input type="text" name="author" id="author">
+        <br><br>
+        Serial Number : <input type="number" name="number" id="number">
+        <br><br>
+        Summary : <textarea name="summary" id="summary" cols="25" role="45"></textarea>
+
+    </div>
+
+
+
+
+    <br><br>
+    <button id="add">Add to the List</button>
+
+
+    <h3>
+        Book List
+    </h3>
+<br><br>
+        <table border="1" cellspacing="0" cellpadding="20">
+        <thead>
+            <tr>
+                <th>No.</th>
+                <th>Book's Name</th>
+                <th>Author's Name</th>
+                <th>Serial Number</th>
+                <th>What's the Theme</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody id="tbody">
+
+        </tbody>
+    </table>
+
+    <script>
+        $(document).ready(function(){
+            $('#add').click(function(){
+                let name = $('#name').val();
+                let author= $('#author').val();
+                let number = $('#number').val();
+                let summary = $('#summary').val();
+console.log(name, author,number, summary);
+
+
+let bookList= {
+    book_name : name ,
+    author_name: author,
+    book_number: number,
+    book_summary: summary,
+}
+console.log(bookList);
+let bookArray;
+let bookData = localStorage.getItem('book_key');
+console.log( 'This is ' +bookData);
+if (bookData==null){
+    bookArray=[];
+
+}else {
+    bookArray = JSON.parse(bookData);
+}
+
+bookArray.push(bookList);
+
+let bookString =  JSON.stringify(bookArray);
+localStorage.setItem('book_key',bookString);
+getData();
+            })
+getData();
+        function getData(){
+            let bookData = localStorage.getItem('book_key');
+            console.log(bookData);
+
+            let bookArray = JSON.parse(bookData);
+            console.log(bookArray);
+
+            let data ='';
+            let j = 1;
+            $.each(bookArray, function(i,v){
+                    console.log('i is ' + i);
+                    console.log('v is ' + v.book_name);
+                     data += `
+                        <tr>
+                            <td>${j++}</td>
+                            <td>${v.book_name}</td>
+                            <td>${v.author_name}</td>
+                            <td>${v.book_number}</td>
+                            <td>${v.book_summary}</td>
+                            <td>
+                                <button>Delete</button>
+                                <button>Edit</button>
+
+                                </td>
+
+                            </tr>
+                    `;
+            })
+            $("#tbody").html(data);
+        }
+        })
+    </script>
+</body>
+</html>
